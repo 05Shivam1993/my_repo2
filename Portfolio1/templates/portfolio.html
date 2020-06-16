@@ -1,0 +1,182 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<title>Shivam's Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #fc9d03;
+}
+.button5:hover {
+  background-color: #ffd38c;
+  border-radius:2em;
+  color: black;
+}
+</style>
+<body class="w3-light-grey">
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+
+    <!-- Left Column -->
+    <div class="w3-third">
+
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <img src="{% static 'profile/shivam.jpg' %}" style="width:250px;height:250px;margin-left:80px;margin-top:10px" alt="Shivam's Photo">
+          <!-- <div class="w3-display-bottomleft w3-container w3-text-black">
+            <h2 style="font-family:Times;margin-left:80px;color:#34ebb7">Shivam Srivastava</h2>
+          </div> -->
+        </div>
+        <div class="w3-container">
+          <p><i class="fa fa-user-circle-o fa-fw w3-margin-right w3-large w3-text-cyan"></i>SHIVAM SRIVASTAVA</p>
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-cyan"></i>Software Developer</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-cyan"></i>Delhi, India</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-cyan"></i>shivam.hbti05@gmail.com</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-cyan"></i>+91-7071581717</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-cyan"></i>+91-7355083726</p>
+          <hr>
+
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-cyan"></i>Skills</b></p>
+          <p>Django</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-cyan" style="width:90%">
+              <div class="w3-center w3-text-white">90%</div>
+            </div>
+          </div>
+          <p>Python</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-cyan" style="width:90%">
+              <div class="w3-center w3-text-white">90%</div>
+            </div>
+          </div>
+          <p>Django Rest Framework</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-cyan" style="width:90%">
+              <div class="w3-center w3-text-white">90%</div>
+          </div>
+          </div>
+          <p>HTML/CSS/Bootstrap</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-cyan" style="width:80%">
+              <div class="w3-center w3-text-white">70%</div>
+            </div>
+          </div>
+           <p>Javascript/jQuery</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-cyan" style="width:80%">
+              <div class="w3-center w3-text-white">70%</div>
+            </div>
+          </div>
+          <br>
+
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-cyan"></i>Languages</b></p>
+          <p>English</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-cyan" style="height:24px;width:100%"><div class="w3-center w3-text-white">100%</div></div>
+          </div>
+          <p>Hindi</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-cyan" style="height:24px;width:100%"><div class="w3-center w3-text-white">100%</div></div>
+          </div>
+          <br>
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        {% if messages %}
+          <ul class="messages">
+				    {% for message in messages %}
+                        {% if message.tags == 'warning'%}
+				            <p class="messages" align="center" style="background: #facbb6;height: 3em;padding-top: 0.65em;opacity: 0.5;">{{ message }}</p>
+                        {% else %}
+                            <p class="messages" align="center" style="background: #c5fcde;height: 3em;padding-top: 0.65em;opacity: 0.5;">{{ message }}</p>
+                        {% endif %}
+				    {% endfor %}
+				</ul>
+      {% endif %}
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-cyan"></i>Work Experience</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Software Developer / Infocom Network Ltd.</b></h5>
+          <h6 class="w3-cyan"><i class="fa fa-calendar fa-fw w3-margin-right"></i>July 2019 - <span class="w3-tag w3-cyan w3-round">Current</span></h6>
+          <p>Experience in analysis design, development and Implementation of various e-commerce and B2B applications, Internet web applications, Database, and Client - Server Architecture using Python/Django, JavaScript, HTML, CSS , Bootstrap, technologies spanning the entire Software Development Life Cycle.</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Software Trainee / Innotical Solutions Pvt. Ltd.</b></h5>
+          <h6 class="w3-cyan"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2019 - June 2019</h6>
+          <ul>
+          <li>Developing software solutions to meet customer needs.</li>
+          <li>Creating and implementing the source code of new applications.</li>
+          <li>Testing source code and debugging code.</li>
+          <li>Evaluating existing applications and performing updates and modifications.</li>
+          <li>Developing technical handbooks to represent the design and code of new applications.</li>
+        </ul>
+          <hr>
+        </div>
+      <div class="w3-container w3-card w3-white">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-cyan"></i>Education</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>MCA from Harcourt Butler Technical Institute, Kanpur</b></h5>
+          <h6 class="w3-text-cyan"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2015-2018</h6>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Python/Django Certifications</b></h5>
+          <h6 class="w3-text-cyan"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2017 - 2018</h6>
+          <h4>Durga Software Solutions</h4>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><a href="/view-full-cv" class="button button5">View Full CV</a></h5>
+        </div>
+      </div>
+
+    <!-- End Right Column -->
+    </div>
+
+  <!-- End Grid -->
+  </div>
+
+  <!-- End Page Container -->
+</div>
+
+<footer class="w3-container w3-cyan w3-center w3-margin-top">
+  <p>Find me on social media</p>
+  <a href="https://www.facebook.com/kingshivam01"><i class="fa fa-facebook-official w3-hover-opacity w3-xxlarge" style="padding-left:1em;"></i></a>
+  <a href="https://www.linkedin.com/in/shivam-srivastava-40a033146/"><i class="fa fa-linkedin w3-hover-opacity w3-xxlarge" style="padding-left:1em;"></i></a>
+  <p>Copyright &copy; 2020 All Rights Reserved by Shivam Srivastava</p>
+</footer>
+
+</body>
+</html>
